@@ -326,6 +326,20 @@ allowed_html = "a[href|target|title],em,strong,cite,code,ul,ol,li[class],dl,dt,d
 ; The reply-to field will be set with the reply-to or from address.
 ; force_default_envelope_sender = Off
 
+; CUSTOMISATION (Requires a change to Mail.inc.php)
+; Force the FROM-address to be the address specified below.
+; forced_from_address = my_from_address@example.com
+
+; CUSTOMISATION (Requires a change to Mail.inc.php)
+; If forced_from_address is uncommented above, then the FROM-address
+; will not usually match the OJS user who sent the email
+; (who will be the REPLY-TO user). This field allows you to
+; give a name to the FROM-address user which is combined with the
+; name of the sending user. E.g. If forced_from_name is "My Journal"
+; and the user who triggers the email is Mr Joe Bloggs, then the
+; FROM-name will be "Mr Joe Bloggs via My Journal"
+; forced_from_name = "My Journal"
+
 ; Force a DMARC compliant from header (RFC5322.From)
 ; If any of your users have email addresses in domains not under your control
 ; you may need to set this to be compliant with DMARC policies published by

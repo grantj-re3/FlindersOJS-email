@@ -524,7 +524,14 @@ class Mail extends DataObject {
 				$f['email'] = Config::getVar('email', 'default_envelope_sender');
 			}
 			// this sets both the envelope sender (RFC5321.MailFrom) and the From: header (RFC5322.From)
-			$mailer->SetFrom($f['email'], $f['name']);
+			if(($ffa = Config::getVar('email', 'forced_from_address')) == null) {
+				$fa = $f['name'];
+				$fn = $f['name'];
+			} else {
+				$fa = $ffa;
+				$fn = (($ffn = Config::getVar('email', 'forced_from_name')) == null) ? "" : "{$f['name']} via {$ffn}";
+			}
+			$mailer->SetFrom($fa, $fn);
 		}
 		// Set the envelope sender (RFC5321.MailFrom)
 		if (($s = $this->getEnvelopeSender()) != null) $mailer->Sender = $s;
