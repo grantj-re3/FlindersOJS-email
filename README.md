@@ -22,8 +22,8 @@ to your organisation or external.
 
 The requirements for *SMTP AUTH client submission* are:
 
-1. Network traffic encryption (e.g. TLS) between OJS (the email
-   sender) and the SMTP gateway
+1. Network traffic encryption (e.g. TLS) across the internet
+   between OJS (the email source) and the SMTP gateway
 2. SMTP authenication (i.e. username and password, where the
    username is typically an email address) for the SMTP gateway
 3. The email FROM address must match a pre-configured email
@@ -31,12 +31,12 @@ The requirements for *SMTP AUTH client submission* are:
    the SMTP authenication or an alias of it)
 
 These requirements should minimise the risk of your SMTP
-gateway being used as an open mail relay.
+gateway being used as an *open* mail relay.
 
 OJS already supports encryption and SMTP authenication (i.e.
 items 1 and 2 above) but currently does not support the
 configuration of a FROM address. The source code changes in
-this repository permit this new feature.
+this repository permits this new feature.
 
 
 ## Configuration
@@ -109,7 +109,7 @@ forced_from_address = my_from_address@example.com
 ; name of the sending user. E.g. If forced_from_name is "My Journal"
 ; and the user who triggers the email is Mr Joe Bloggs, then the
 ; FROM-name will be "Mr Joe Bloggs via My Journal"
-forced_from_name = "My Journal"
+forced_from_name = "My OJS Journal"
 ```
 
 
