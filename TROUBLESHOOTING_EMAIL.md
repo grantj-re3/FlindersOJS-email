@@ -12,7 +12,7 @@ The example below worked for me on a Linux operating system.
 ## Prerequisite
 
 This example assumes SMTP authentication is used. SMTP authentication
-requires the username and password to be Base64 encoded. I recommend
+requires the username and password be Base64 encoded. I recommend
 you avoid entering such secure information into a public web site.
 Instead, you should be able to encode the username and password using
 the Linux command line if the base64 app is installed. For example, type:
@@ -72,7 +72,8 @@ This is a test
 ***WARNING:*** In the reference below, it is suggested that a *Base64
 converter* web site be used to convert the username and password to
 Base64 encoding. Entering such information into a public web site is
-a security risk so should be avoided.
+a security risk so should be avoided. See above for an alternative
+method.
 
 - https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line/#SMTP_with_TLSSSL
 

@@ -20,6 +20,10 @@ Identified Mail (DKIM) for your existing domain will not need
 to be updated. The destination email addresses maybe internal
 to your organisation or external.
 
+The information below mainly discusses email from the OJS
+view. Microsoft Office 365 SMTP AUTH client submission is
+discussed in one of the links in the References section.
+
 The requirements for *SMTP AUTH client submission* are:
 
 1. Network traffic encryption (e.g. TLS) across the internet
@@ -35,7 +39,7 @@ gateway being used as an *open* mail relay.
 
 OJS already supports encryption and SMTP authenication (i.e.
 items 1 and 2 above) but currently does not support the
-configuration of a FROM address. The source code changes in
+configuration of a FROM address. The source code in
 this repository permits this new feature.
 
 
